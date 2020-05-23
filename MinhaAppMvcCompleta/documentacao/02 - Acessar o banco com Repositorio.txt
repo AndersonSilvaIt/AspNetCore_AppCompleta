@@ -1,0 +1,8 @@
+Criação de Interfaces do Repositório
+
+1 -> Implementado as interfaces do repositório
+	o Contexto será injetado via injeção de dependência na classe repositório base
+	as classes que herdam dessa classe base, precisam também receber por injeção de dependência e repassar para a classe base
+	
+	
+2 -> Implementado os repositórios referente as interfaces

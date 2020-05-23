@@ -7,6 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DevIO.Data.Context;
+using DevIO.Business.Interfaces;
+using DevIO.Data.Repository;
 
 namespace DevIO.App
 {
@@ -30,6 +32,12 @@ namespace DevIO.App
 
 			services.AddControllersWithViews();
 			services.AddRazorPages();
+
+			services.AddScoped<MeuDbContext>();
+			services.AddScoped<IProdutoRepository, ProdutoRepository>();
+			services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+			services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
 			//services.AddMvc();
 		}
 
