@@ -1,0 +1,51 @@
+1 ->  Install-Package Microsoft.EntityFrameworkCore
+
+No construtor do DbContex é passado no parâmetros os options que ele usará (usa o sql e etc),
+é passado por injeção de dependência, sendo apontando na classe Startup.cs
+
+2 -> Mapeamento de entidades, utilizando o FluentApi, com isso não precisa utilizar os dataannotations nas entidades (tamanho, required, etc)
+As classes de mapeamento precisa ser herdadadas de IEntityTypeConfiguration<TEntity>
+antes a configuração era passada via construtor, agora precisa implementar o método Configure
+
+Para configurar o tipo da coluna, é preciso um pacote adicional para encontrar o HasColumnType
+	Install-Package Microsoft.EntityFrameworkCore.Relational
+	
+No Contexto é necessário criar o override do método OnModelCreating
+onde o mesmo possui o modelBuilder.ApplyConfigurationsFromAssembly
+--> modelBuilder.ApplyConfigurationsFromAssembly(typeof(MeuDbContext).Assembly);
+irei passar o contexto, o vs irá buscar as entidades que estão mapeadas nesse contexto DbSet<TEntyty>,
+após isso, irá buscar as entidades que pertencem a esse assembly e que herdam de IEntityTypeConfiguration<TEntity>
+
+Ex: 
+ DbSet<Produto> 
+ 
+ possui a classe ProdutoMapping
+ public class ProdutoMapping: IEntityTypeConfiguration<Produto>
+ Utiliza-se o Reflection do C#
+ 
+ 
+3 -> Configurar o DbContext na aplicação (Classe Startup.cs)
+			services.AddDbContext<MeuDbContext>(options =>
+				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+4 -> Criar as Migrations
+	Como Possui dois contextos, preciso criar duas Migrations
+	(Migration do Identity e da aplicação "MeuDbContext")
+	
+	Add-Migration "nome" -verbose -Context MeuDbContex
+	
+	para criar o banco na aplicação
+	
+	Update-Database -Context ApplicationDbContext
+	Update-Database -Context MeuDbContex
+	
+	"IMPORTANTE"
+	Caso não quiser criar o banco a partir da Migration, é possível gerar o script para criar o banco posteriormente,
+	é necessário instalar um outro pacote
+	
+	Install-Package Microsoft.EntityFrameworkCore.sqlserver
+	
+	Comando perar gerar o script
+	Script-Migration -Context MeuDbContext
+	Script-Migration -Context ApplicationDbContext
+	
