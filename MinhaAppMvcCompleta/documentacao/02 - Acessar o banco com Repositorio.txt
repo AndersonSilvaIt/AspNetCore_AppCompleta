@@ -6,3 +6,5 @@ Criação de Interfaces do Repositório
 	
 	
 2 -> Implementado os repositórios referente as interfaces
+
+3 -> No startup, configurar a injeção de dependência do Contexto
