@@ -1,0 +1,7 @@
+1 -> Erro
+	No ProdutoViewModel contém a propriedade IFormFile, e o C# não reconhece esse campo para criar um campo na tela, no caso precisa comentar essa propriedade,
+	criar o scafoold e depois descomentar.
+	
+	Como estou criando o Scafoold utilizando o ApplicationDbContext, ele irá criar o DbSet nesse contexto do FornecedorViewModel, necessário exlcuir
+	
+2 -> Injetar nos construtoreso os devidos repositórios e o AutoMapper	

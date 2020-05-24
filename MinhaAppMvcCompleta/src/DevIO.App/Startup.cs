@@ -34,6 +34,7 @@ namespace DevIO.App
 			services.AddControllersWithViews();
 			services.AddRazorPages();
 
+			services.AddAutoMapper(typeof(Startup));
 			
 			services.AddScoped<MeuDbContext>();
 			services.AddScoped<IProdutoRepository, ProdutoRepository>();
