@@ -1,0 +1,14 @@
+1 -> Criado a partialView endereco
+2 -> Implementado a partialView na View de Endereço
+3 -> Ajuste de Layout da View
+	
+	Nos botões foram implementado ícones, necessário instalar novo pacote
+	Add -> Client-Side-Library: font-awesome
+			all.min.css
+			webfonts(todos)
+	Colocar as referências na View de Layout (pois será usado por todo mundo).
+	
+4 -> Tratamento do campo de Upload de Imagem (junto do js)
+	
+5 -> Na tela de Create produto é necessário informar o enctype="multipart/form-data" no "Form"
+	usado para fazer upload de arquivos no formátio binário
