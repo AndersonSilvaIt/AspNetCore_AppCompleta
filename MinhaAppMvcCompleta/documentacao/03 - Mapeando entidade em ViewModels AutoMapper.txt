@@ -1,0 +1,14 @@
+ViewModels é uma técnica utilizada para mapear os dados do banco para as Views, 
+com isso sua resposabilidade é somente com a View, mensagens de erro e etc.
+
+1 -> Criação das ViewModels
+
+2 -> Instalação do AutoMapper (Camada de apresentação, onde estão os ViewModels)
+	Install-Package automapper.extensions.microsoft.dependencyinjection
+	e instalar uma extensão para injeção de dependência do aspnet
+	
+3 -> Configurar o AutoMapper na Startup
+	
+	services.AddAutoMapper(typeof(Startup));
+	o c# irá usar o assembly do startup, procurar as classes que herdam de Profile, essas são as classes de confiugração do AutoMapper
+	
