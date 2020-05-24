@@ -1,0 +1,1 @@
+Realizado o tratamento de imagem tanto no cadastro de produto quanto na Listagem.
