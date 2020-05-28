@@ -1,0 +1,4 @@
+Na tale de edição, no botão voltar é usado uma regra diferente
+javascript:window.history.back()
+
+visto que o produto pode ser editado tanto na tela deedição quanto na tela de fornecedor

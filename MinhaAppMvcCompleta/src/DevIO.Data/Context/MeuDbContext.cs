@@ -28,8 +28,14 @@ namespace DevIO.Data.Context
 			foreach(var  item in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) {
 				item.DeleteBehavior = DeleteBehavior.ClientSetNull;
 			}
-
+			
 			base.OnModelCreating(modelBuilder);
+		}
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+			optionsBuilder.EnableSensitiveDataLogging();
+			
+			base.OnConfiguring(optionsBuilder);
 		}
 
 	}

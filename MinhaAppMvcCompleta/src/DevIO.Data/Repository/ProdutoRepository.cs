@@ -19,6 +19,7 @@ namespace DevIO.Data.Repository
 			//o include traz o fornecedor do produto
 			//Chaves estrangeiras / Fazer um inner Join
 			return await Db.Produtos.AsNoTracking().Include(f => f.Fornecedor)
+				.AsNoTracking()
 				.FirstOrDefaultAsync(p => p.Id == id);
 		}
 
@@ -26,7 +27,7 @@ namespace DevIO.Data.Repository
 
 			//Traz todos os Fornecedores que liga esse produto
 			return await Db.Produtos.AsNoTracking().Include(f => f.Fornecedor)
-					.OrderBy(p => p.Nome).ToListAsync();
+					.OrderBy(p => p.Nome).AsNoTracking().ToListAsync();
 		}
 
 		public async Task<IEnumerable<Produto>> ObterProdutosPorFornecedor(Guid fornecedorId) {
