@@ -1,0 +1,6 @@
+1 -> Implementado Partial View _AtualizarEndereco
+
+Quando marca o botao como "data-modal", irei utilizar para abrir o Modal, funções no site.js
+ele já reconhece que irá abrir uma tela de modal
+
+Implementado o AjaxModal no site.js
