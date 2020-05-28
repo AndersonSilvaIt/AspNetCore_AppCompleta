@@ -3,3 +3,14 @@
 
 3 -> Os valores numéricos quando o campo fica vazio, ele mostra a mensagem que está no Modelo (Entidade, data anotations),
 caso digitar alguma letra, ele mostra uma mensagem inglês gerado automaticamente pelo html
+
+ 
+4 -> Criado pasta de extesnaõ para o startup
+	Criado o atributo Moeda para validções (DataAnnotation)
+	
+	Criado o Addaper para validação no Client
+	
+	para utilizar o MoedaAtributeAddapter, é necessário criar um Provider para ele (nova classe)
+	MoedaValidationAttributeAdapterProvider
+	
+5 -> Registrar esse provider via injeção de dependência (Startup)

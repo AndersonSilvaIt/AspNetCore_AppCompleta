@@ -1,0 +1,5 @@
+Implementando tratamento nas views de detalhes, exlusão e etc.
+
+1 -> Criado extensão para o Razor
+	FormataDocumento (usado no index do fornecedor)
+	
