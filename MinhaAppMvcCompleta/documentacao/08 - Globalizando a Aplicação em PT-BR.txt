@@ -1,0 +1,5 @@
+1 -> Implementar a globalização no Startup
+2 -> Implementar a globalização no JS arquivo _ValidationScriptPartial nos arquivos Shared
+
+3 -> Os valores numéricos quando o campo fica vazio, ele mostra a mensagem que está no Modelo (Entidade, data anotations),
+caso digitar alguma letra, ele mostra uma mensagem inglês gerado automaticamente pelo html
