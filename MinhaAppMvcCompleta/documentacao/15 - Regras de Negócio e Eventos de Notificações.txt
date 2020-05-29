@@ -1,0 +1,9 @@
+1 -> Criado as classes de notificação
+2 -> Implementado as injeções de dependência dos serviços no startup
+3 -> Impleemntado os serviços nas controllers
+4 -> Configurando a base controller para receber os eventos de erros
+5 -> Criado extensão para mostrar os erros do Service (ViewComponent)
+6 -> Impleentado o viewComponent na _Shared
+	Criado a View de alertar(Default.cshtml)
+	
+7 -> implementado o fadeOut, quando aparece a mensagem de sucesso, ela some aos poucos
