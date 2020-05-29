@@ -1,0 +1,15 @@
+Realizao o Double Check (validação tanto em Front quanto em Back End)
+
+1 -> Instalação do Fluent Validation
+	install-package FLuentValidation
+	 
+	 Criado FornecedorService com interfaces
+	 Criado o FornecedorValidation e as classes de validação de documento
+	 
+	 
+	 as classes de validações precisam implementar de AbstractValidatior<TEntity>, e no construtor são feitas as validações
+	 Criado a classe de Validação de Documentos "ValidacaoDocs", para usar na validação do fornecedor
+	 
+	 Na FornecedorService, imeplementar as validações
+	 
+	 Implementado na BaseService
