@@ -1,0 +1,5 @@
+1 -> Criado as classes para métodos de extensão do Startup
+3 -> Craiado os ambientes da aplicação (Dev, Prod)...
+
+4 -> Criado o EmailTagHelpder (Extensões)
+	Importar o tagHelpder criado na ViewImports
