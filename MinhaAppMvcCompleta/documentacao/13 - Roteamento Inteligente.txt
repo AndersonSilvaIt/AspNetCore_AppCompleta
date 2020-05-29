@@ -1,0 +1,2 @@
+1 -> Implementando as Rotas das controllers
+Obs: é necessário usar a mesma rota tanto no get quanto no Post
