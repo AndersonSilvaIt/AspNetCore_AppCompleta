@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DevIO.App.ViewModels;
+using System;
 
 namespace DevIO.App.Controllers
 {
@@ -21,9 +22,29 @@ namespace DevIO.App.Controllers
 			return View();
 		}
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-		public IActionResult Error() {
-			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		[Route("erro/{id:length(3,3)}")]
+		public IActionResult Errors(int id) {
+
+			var modelErro = new ErrorViewModel();
+
+			if(id == 500) {
+				modelErro.Mensagem = "Ocorreu um erro! Tente novamente mais tarde ou contate nosso suporte.";
+				modelErro.Titulo = "Ocorreu um erro!";
+				modelErro.ErrorCode = id;
+			}
+			else if(id == 404) {
+				modelErro.Mensagem = "A página que está procurando não existe! <br/> Em caso de dúvidas entre em contatocom nosso suporte!";
+				modelErro.Titulo = "Ops! Página não encontrada.";
+				modelErro.ErrorCode = id;
+			}
+			else if(id == 403){
+				modelErro.Mensagem = "Você não tem permissão para fazer isto!";
+				modelErro.Titulo = "Acesso negado.";
+				modelErro.ErrorCode = id;
+			} else {
+				return StatusCode(404);
+			}
+			return View("Error", modelErro);
 		}
 	}
 }
