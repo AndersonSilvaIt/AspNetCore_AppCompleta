@@ -1,3 +1,7 @@
 Verificar o site OWASP - documentam todo tipo de ataque que são realizados em sites
 
 [ValidateAntiForgeryToken] = Utilizado para proteger de ataques.
+
+Caso esquecer de utilizar esse atributo, basta colocar na configuração do MVC
+
+options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
