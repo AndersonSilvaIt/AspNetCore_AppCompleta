@@ -1,0 +1,13 @@
+1 -> Implementado as Claims de Produto
+ ex: na tabela AspNetUserClaims
+	UserId			ClaimType 		ClaimValue
+	IdUsuario		Tipo da Claim	E o que ele tem permissão de fazer
+	
+
+2 -> Implementado a classe de extensão para o filtro de Claim
+
+3 -> Implementdo funcionalidade para esconder os botões da tela de acordo com as permissões do usuario
+	ex: no Index de Fornecedor, nos botões usar o supress-by-claim-name=""
+												  supress-by-claim-value="Excluir"
+												 
+	

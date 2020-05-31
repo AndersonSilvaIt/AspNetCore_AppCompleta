@@ -57,7 +57,7 @@
 					@Html.DisplayFor(model => model.Endereco.Estado)
 				</td>
 				<td>
-					<a asp-action="AtualizarEndereco" asp-route-id="@Model.Id" class="btn btn-info" data-modal="">
+					<a supress-by-action="Edit, ObterEndereco" asp-action="AtualizarEndereco" asp-route-id="@Model.Id" class="btn btn-info" data-modal="">
 						<!-- o asp-route-id é o parâmetro que preciso passar, como na controller o parametro chama-se "id", então aqui precisa ser asp-route-id -->
 						<span title="Editar" class="fa fa-pencil-alt"></span>
 					</a>

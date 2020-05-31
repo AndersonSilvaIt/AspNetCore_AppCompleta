@@ -51,7 +51,7 @@
 </form>
 
 <div id="EnderecoTarget">
-	<partial name="_DetalhesEndereco"/>
+	<partial name="_DetalhesEndereco" />
 </div>
 
 <hr />
@@ -68,6 +68,8 @@
 	</div>
 </div>
 
+
+
 @section Scripts {
 	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 
@@ -76,4 +78,5 @@
 			AjaxModal();
 		});
 	</script>
+
 }
