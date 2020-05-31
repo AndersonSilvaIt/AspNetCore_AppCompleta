@@ -1,0 +1,3 @@
+Verificar o site OWASP - documentam todo tipo de ataque que são realizados em sites
+
+[ValidateAntiForgeryToken] = Utilizado para proteger de ataques.
